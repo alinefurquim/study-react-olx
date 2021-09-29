@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
 import { connect } from 'react-redux';
-import { BrowserRouter} from 'react-router-dom';
 import Routes from './Routes';
+import './App.css';
+import { BrowserRouter} from 'react-router-dom';
 import { Template } from './components/MainComponents';
 import Header from './components/partials/header/header';
 import Footer from './components/partials/footer/footer';

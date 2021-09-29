@@ -68,7 +68,7 @@ const Page = () => {
                     <h2>Anúncios recentes</h2>
                     <div className="list">
                         {adList.map((i, k) => {
-                            <AdItem key={k} data={i} />
+                           return <AdItem key={k} data={i} />
                         })}
                     </div>
                     <Link to="/ads" className="seeAllLink">Ver todos</Link>

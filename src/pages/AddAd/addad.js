@@ -4,10 +4,12 @@ import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import { PageArea } from './styled';
 import useAPI from '../../helpers/olxAPI';
 import { ErrorMessage, PageContainer, PageTitle } from '../../components/MainComponents';
+import { useHistory } from 'react-router';
 
 const Page = () => {
     const api = useAPI();
     const fileField = useRef();
+    const history = useHistory();
     const [categories, setCategories] = useState([]);
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
@@ -52,6 +54,15 @@ const Page = () => {
                 for (let i = 0; i<fileField.current.files.length; i++) {
                     fData.append('img', fileField.current.files[i]);
                 }
+            }
+
+            const json = await api.addAd(fData);
+
+            if(!json.error) {
+                history.push(`/ad/${json.id}`);
+                return;
+            } else {
+                setError(json.error);
             }
 
         } else {

@@ -56,5 +56,45 @@ margin-top: 20px;
     }
     .rightSide {
         flex: 1;
+
+        h2 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+
+            .aditem {
+                width: 33%;
+            }
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+
+            .pagItem {
+                width: 30px;
+                height: 30px;
+                border: 1px solid #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                margin-right: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    border: 1px solid #999;
+                }
+                &:active {
+                    background-color: #ccc;
+                }
+            }
+        }
     }
 `;
